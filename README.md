@@ -1,13 +1,13 @@
-# Comparison of JVM language features
-This branch is dedicated to compare similarties between a JVM languages, their constructions and features. 
+# Comparing JVM language features
+This branch is dedicated to compare similarties between selected JVM languages. Their constructions and features. To highlight specific only
+command-line is used for compilation and run.
 
 
-
-## 1. Comparision of selection control mechanism 3 JVM languages
+## **A.** Comparing the selection control mechanism, 3 JVM languages
 The comparison of selection control mechanism used for change the flow of the program. The comparison is done accross a various JVM languages. Naive vehicle factory (Img.1) is considered.
 ![Img.1: Naive vehicle factory](factory_pattern.png)
 
-### Java - switch statement
+### **1. Java** - switch statement
 ```bash
 $ java -version 
 output: openjdk version "18" 2022-03-2
@@ -23,7 +23,7 @@ Execute Java Program:
 $ java --enable-preview -cp out VehicleFactory
 ```
 
-### Kotlin - when statement
+### **2. Kotlin** - when statement
 Kotlin language uses `when` statement with ability branch the program flow. The similarity to the Java `switch` statement is noticable. 
 ```bash
 $ kotlin -version
@@ -40,7 +40,7 @@ Execute Kotlin Program:
 $ kotlin -classpath ./out/vehicle_factory.jar KVehicleFactoryKt
 ```
 
-#### Scala - match statement
+### **3. Scala** - match statement
 Scala introduces a `match` pattern for controling the program flow branching. There are similarities to the Java `swicht` statement.
 ```bash
 $ scala -version
