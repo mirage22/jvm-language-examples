@@ -4,10 +4,15 @@ This branch is dedicated to compare similarties between a JVM languages, their c
 
 
 ## 1. Comparision of selection control mechanism 3 JVM languages
-The comparison of selection control mechanism used for change the flow of the program. The comparison is done accross a various JVM languages.
+The comparison of selection control mechanism used for change the flow of the program. The comparison is done accross a various JVM languages. Naive vehicle factory (Img.1) is considered.
+![Img.1: Naive vehicle factory](factory_pattern.png)
 
 ### Java - switch statement
-The switch statement us used according to the [JEP-420: Pattern Matching](https://openjdk.java.net/jeps/420)
+```bash
+$ java -version 
+output: openjdk version "18" 2022-03-2
+``` 
+Used switch statement for the factory construciton is according to the [JEP-420: Pattern Matching](https://openjdk.java.net/jeps/420). It is required to enable preview features. 
 
 Compile Java Program:
 ```bash
@@ -18,8 +23,12 @@ Execute Java Program:
 $ java --enable-preview -cp out VehicleFactory
 ```
 
-### Kotlin
-Kotlin language uses `when` statement with ability to branking the program flow. There is similarity with other JVM languages. 
+### Kotlin - when statement
+Kotlin language uses `when` statement with ability branch the program flow. The similarity to the Java `switch` statement is noticable. 
+```bash
+$ kotlin -version
+Kotlin version 1.6.10-release-923 (JRE 18+36-2087)
+```
 
 Compile Kotlin Program: 
 ```bash
@@ -31,8 +40,12 @@ Execute Kotlin Program:
 $ kotlin -classpath ./out/vehicle_factory.jar KVehicleFactoryKt
 ```
 
-#### Scala 
-Scala introduces a `match` pattern for controling the program flow branching. There are similarities to the Java `swicht` statement
+#### Scala - match statement
+Scala introduces a `match` pattern for controling the program flow branching. There are similarities to the Java `swicht` statement.
+```bash
+$ scala -version
+Scala code runner version 2.13.8 -- Copyright 2002-2021, LAMP/EPFL and Lightbend, Inc.
+```
 
 Compile Scala Program:
 ```bash 

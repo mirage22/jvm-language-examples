@@ -31,7 +31,8 @@ jobs:
 
       - name: Configure Kotlin
         uses: fwilhe2/setup-kotlin@main
-      
+        with:
+          version: 1.6.10
       - name: Compile Kotlin Example
         run: | 
           kotlinc ./kotlin/*.kt -include-runtime \
