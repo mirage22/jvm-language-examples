@@ -22,3 +22,20 @@ jobs:
       - name: Test Java Example
         run: java --enable-preview -cp out VehicleFactory
 
+  compile-kotlin:
+    name: Compile Kotlin example
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure Kotlin
+        uses: fwilhe2/setup-kotlin@main
+      
+      - name: Compile Kotlin Example
+        run: | 
+          kotlinc ./kotlin/*.kt -include-runtime \
+          -d ./out/vehicle_factory.jar
+      - name: Test Kotlin Example
+        run: kotlin -classpath ./out/vehicle_factory.jar KVehicleFactoryKt
+

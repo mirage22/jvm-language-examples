@@ -12,7 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- *  along with jvm-languages-exampless. If not, see <http://www.gnu.org/licenses/>.
+ *  along with jvm-languages-examples. If not, see <http://www.gnu.org/licenses/>.
  */
 
 class KVehicleFactory {
