@@ -53,6 +53,4 @@ jobs:
       - name: test scala-sbt
         run: sbt -version
       - name: Compile Scala Example
-        run: scalac -d out ./scala/*.scala
-      - name: Test Scala Example
-        run: scala -cp out SVehicleFactory
+        run: sbt compile
