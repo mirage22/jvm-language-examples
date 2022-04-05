@@ -50,7 +50,5 @@ jobs:
         uses:  olafurpg/setup-scala@v11
         with:
           java-version: openjdk@1.17
-      - name: test scala-sbt
-        run: sbt -version
       - name: Compile Scala Example
         run: sbt compile
