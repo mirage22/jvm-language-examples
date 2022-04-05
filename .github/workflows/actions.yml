@@ -49,7 +49,9 @@ jobs:
       - name: Configure Scala
         uses:  olafurpg/setup-scala@v11
         with:
-          version: 2.13.8
+          java-version: openjdk@1.18
+      - name: test scala-sbt
+        run: sbt -version
       - name: Compile Scala Example
         run: scalac -d out ./scala/*.scala
       - name: Test Scala Example
