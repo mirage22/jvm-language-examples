@@ -19,11 +19,14 @@ jobs:
         run: | 
           javac --release 18 --enable-preview -g \
           -classpath out -sourcepath java -d out ./java/*java
+  test-java:
+    name: Run Simple 
       - name: Test Java Example
         run: java --enable-preview -cp out VehicleFactory
 
   compile-kotlin:
     name: Compile Kotlin example
+    needs: compile-java
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout
@@ -40,3 +43,19 @@ jobs:
       - name: Test Kotlin Example
         run: kotlin -classpath ./out/vehicle_factory.jar KVehicleFactoryKt
 
+  compile-scala:
+    name: Compile Scala example
+    needs: compile-kotlin
+    runs-ons: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure Scala
+        uses:  olafurpg/setup-scala@v11
+        with:
+          version: 2.13.8
+      - name: Compile Scala Example
+        run: scalac -d out ./scala/*.scala
+      - name: Test Scala Example
+        run: scala -cp out SVehicleFactory
