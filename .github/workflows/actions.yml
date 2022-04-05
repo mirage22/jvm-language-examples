@@ -41,7 +41,7 @@ jobs:
   compile-scala:
     name: Compile Scala example
     needs: compile-kotlin
-    runs-ons: ubuntu-latest
+    runs-on: ubuntu-latest
     steps: 
       - name: Checkout
         uses: actions/checkout@v2
