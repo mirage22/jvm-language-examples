@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  jserver_one:
+    image: jdk18-slim-jwebserver:latest
+    restart: always
+    ports:
+      - "8000:8000"
+
+  jserver_two:
+    image: openjdk:18-jdk-slim
+    restart: always
+    volumes:
+      - ./http-static:/http-static
+    ports:
+      - "8001:8001"
+    command: ["sh", "-c", "jwebserver -d /http-static -b 0.0.0.0 -p 8001 -o verbose"]
+
+

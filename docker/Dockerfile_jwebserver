@@ -1,0 +1,8 @@
+FROM openjdk:18-jdk-slim
+RUN mkdir /http-static
+RUN mkdir /http-static/images
+COPY http-static/ /http-static/
+
+WORKDIR /http-static
+
+CMD ["sh", "-c", "jwebserver -b 0.0.0.0"]

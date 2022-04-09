@@ -57,3 +57,35 @@ Execute Scala Program
 $ scala -cp out SVehicleFactory
 ```
 
+## **B.** Java 18 - descovering "jwebserver" possibilties [JEP-408](https://openjdk.java.net/jeps/408)
+
+### Running simple "jwesberver" by command-line
+```bash
+$ jwebserver -b 0.0.0.0 -p 8880 -d <PROJECT_PATH>/http-static -o info
+or
+$ java -m jdk.httpserver  -b 0.0.0.0 -p 8880 -d <PROJECT_PATH>/http-static -o verbose
+
+# execute requests 
+$ curl --head http://localhost:8880
+$ curl -X GET -I http://localhost:8880/get_simple_1.json
+$ curl -X POST -I http://localhost:8880
+```
+### Running compiled version 
+```bash
+$ java --enable-preview -cp out WebServerSimpleMain simple | advanced
+usege: 
+available options: 
+    - simple
+    - advanced
+    - <NONE> not allowed, causes an exception
+```
+
+### Building a docker image
+```bash
+$ docker build -f ./docker/Dockerfile_jwebserver --no-cache -t jdk18-slim-jwebserver:latest .
+```
+
+### Running a docker-compose
+```bash
+$ docker-compose down
+```
